@@ -10,4 +10,4 @@ Just drag and drop the folder, APSGroupedTableView into your project.
 
 ### Author
 
-[@AishPratap](https://github.com/AishPratap)
+[AishPratap](https://github.com/AishPratap)
