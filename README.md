@@ -4,7 +4,7 @@ This was a design requirement I faced in one of my projects. I decided to work o
 
 ### Preview
 
-[ScreenShot](https://github.com/AishPratap/APSGroupedTableView/blob/master/Screenshots/ScreenShot.png)
+![ScreenShot](https://github.com/AishPratap/APSGroupedTableView/blob/master/Screenshots/ScreenShot.png)
 
 ### Manual Installation
 
