@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611AB4701DA0572B001BEA67 /* APSGroupedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611AB46F1DA0572B001BEA67 /* APSGroupedTableViewCell.swift */; };
 		61BD0D2C1D9E3F0C00D7389E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD0D2B1D9E3F0C00D7389E /* AppDelegate.swift */; };
 		61BD0D2E1D9E3F0C00D7389E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD0D2D1D9E3F0C00D7389E /* ViewController.swift */; };
 		61BD0D311D9E3F0C00D7389E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BD0D2F1D9E3F0C00D7389E /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		61BD0D361D9E3F0C00D7389E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BD0D341D9E3F0C00D7389E /* LaunchScreen.storyboard */; };
 		61BD0D411D9E3F0C00D7389E /* APSGroupedTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD0D401D9E3F0C00D7389E /* APSGroupedTableViewTests.swift */; };
 		61BD0D4C1D9E3F0C00D7389E /* APSGroupedTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD0D4B1D9E3F0C00D7389E /* APSGroupedTableViewUITests.swift */; };
+		61BD0D5A1D9E3F4B00D7389E /* APSGroupedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD0D591D9E3F4B00D7389E /* APSGroupedTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		611AB46F1DA0572B001BEA67 /* APSGroupedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APSGroupedTableViewCell.swift; sourceTree = "<group>"; };
 		61BD0D281D9E3F0C00D7389E /* APSGroupedTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APSGroupedTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BD0D2B1D9E3F0C00D7389E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61BD0D2D1D9E3F0C00D7389E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		61BD0D471D9E3F0C00D7389E /* APSGroupedTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APSGroupedTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BD0D4B1D9E3F0C00D7389E /* APSGroupedTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APSGroupedTableViewUITests.swift; sourceTree = "<group>"; };
 		61BD0D4D1D9E3F0C00D7389E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61BD0D591D9E3F4B00D7389E /* APSGroupedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APSGroupedTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				61BD0D2B1D9E3F0C00D7389E /* AppDelegate.swift */,
 				61BD0D2D1D9E3F0C00D7389E /* ViewController.swift */,
+				61BD0D591D9E3F4B00D7389E /* APSGroupedTableView.swift */,
+				611AB46F1DA0572B001BEA67 /* APSGroupedTableViewCell.swift */,
 				61BD0D2F1D9E3F0C00D7389E /* Main.storyboard */,
 				61BD0D321D9E3F0C00D7389E /* Assets.xcassets */,
 				61BD0D341D9E3F0C00D7389E /* LaunchScreen.storyboard */,
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61BD0D2E1D9E3F0C00D7389E /* ViewController.swift in Sources */,
+				611AB4701DA0572B001BEA67 /* APSGroupedTableViewCell.swift in Sources */,
+				61BD0D5A1D9E3F4B00D7389E /* APSGroupedTableView.swift in Sources */,
 				61BD0D2C1D9E3F0C00D7389E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +511,7 @@
 				61BD0D521D9E3F0C00D7389E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61BD0D531D9E3F0C00D7389E /* Build configuration list for PBXNativeTarget "APSGroupedTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +520,7 @@
 				61BD0D551D9E3F0C00D7389E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61BD0D561D9E3F0C00D7389E /* Build configuration list for PBXNativeTarget "APSGroupedTableViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +529,7 @@
 				61BD0D581D9E3F0C00D7389E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
