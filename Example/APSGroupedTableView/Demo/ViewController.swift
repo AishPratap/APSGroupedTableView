@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,APSGroupedTableDataSource {
+class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTableDelegte {
 
     let category_bg = UIColor .init(colorLiteralRed: 22.0/255.0, green: 151.0/255.0, blue: 136.0/255.0, alpha: 1)
     let content_bg = UIColor .init(colorLiteralRed: 224.0/255.0, green: 226.0/255.0, blue: 196.0/255.0, alpha: 1)
@@ -21,6 +21,7 @@ class ViewController: UIViewController,APSGroupedTableDataSource {
         let table = APSGroupedTableView(frame: self.view.bounds, style: .plain);
         table.rowsCount = 10
         table.apsDataSource = self
+        table.apsDelegate = self
         table.showsVerticalScrollIndicator = false
         tableData = self.mockData()
         table.register(APSGroupedTableViewCell.self, forCellReuseIdentifier: "CustomCell")
@@ -76,6 +77,11 @@ class ViewController: UIViewController,APSGroupedTableDataSource {
         cell.backgroundColor = content_bg
         cell.selectionStyle = .none
         return cell;
+    }
+    
+    //MARK: - APSTableView Delegate
+    func apsTableView(tableView:APSGroupedTableView, didTap index:[Int]){
+        
     }
 }
 
