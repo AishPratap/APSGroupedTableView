@@ -15,15 +15,20 @@ protocol APSGroupedTableDataSource:class {
     func apstableview(_ tableView: APSGroupedTableView, heightForRowAt indexPath: IndexPath) -> CGFloat
 }
 
-protocol APSGroupedTableDelegte:class {
-    func numberOfSections(in aps_tableView: APSGroupedTableView) -> Int
+protocol APSGroupedTableViewOptionalDatasources:class {
+    func numberOfSections(tableView:APSGroupedTableView) -> Int
 }
 
-class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSource{
+protocol APSGroupedTableDelegte:class {
+    func apsTableView(tableView:APSGroupedTableView, didTap index:[Int])
+}
+
+class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSource,APSGroupedCellDelegate{
     
     var rowsCount = 5;
     weak var apsDataSource:APSGroupedTableDataSource?
-    weak var apsdelegate:APSGroupedTableDelegte?
+    weak var apsDelegate:APSGroupedTableDelegte?
+    weak var apsOptionalDelegate:APSGroupedTableViewOptionalDatasources?
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -48,7 +53,7 @@ class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSourc
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let numSections = apsdelegate?.numberOfSections(in: self) else{
+        guard let numSections = apsOptionalDelegate?.numberOfSections(tableView: self) else{
             return 1
         }
         return numSections
@@ -74,13 +79,8 @@ class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSourc
         
     }
     
-    func cellTapped(sender : AnyObject) {
-        
-        let button = sender as! UIButton
-        
-        let section = button.tag/100
-        let row = (button.tag%100)/10
-        let buttonIndex = (button.tag%100)%10
-        
+    //MARK: - Cell Delegate
+    func apsGroupedCellDidTapButton(buttonIndex: [Int]) {
+        apsDelegate?.apsTableView(tableView: self, didTap: buttonIndex)
     }
 }

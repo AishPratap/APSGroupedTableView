@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol APSGroupedCellDelegate: class {
+    func apsGroupedCellDidTapButton(buttonIndex:[Int]);
+}
+
 class APSGroupedTableViewCell: UITableViewCell {
 
+    weak var delegate:APSGroupedCellDelegate?
     let categoryWidth:CGFloat = 100.0
     let cellPadding:CGFloat = 10.0
     let corenerRadius = 2.0
@@ -66,6 +71,7 @@ class APSGroupedTableViewCell: UITableViewCell {
             medButtonView.setTitleColor(category_bg, for: .normal)
             medButtonView.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
             medButtonView.contentHorizontalAlignment = .left
+            medButtonView.addTarget(self, action: #selector(self.cellTapped(sender:)), for: .touchUpInside)
             
             let medSeparatorLabel = UILabel(frame:CGRect(x:categoryWidth, y:ySpace + CGFloat(categoryHeight), width:self.frame.size.width - (categoryWidth + cellPadding), height:1))
             medSeparatorLabel.backgroundColor = separatorColor
@@ -104,6 +110,18 @@ class APSGroupedTableViewCell: UITableViewCell {
         self.contentView.subviews.forEach{$0.removeFromSuperview()}
         self.contentView.addSubview(customViewForCell(cellIndex: self.tag))
         super.layoutSubviews()
+        
+    }
+    
+    func cellTapped(sender : AnyObject) {
+        
+        let button = sender as! UIButton
+        
+        let section = button.tag/100
+        let row = (button.tag%100)/10
+        let buttonIndex = (button.tag%100)%10
+        
+        delegate?.apsGroupedCellDidTapButton(buttonIndex: [section,row,buttonIndex])
         
     }
 }
