@@ -10,6 +10,9 @@ This was a design requirement I faced in one of my projects. I decided to work o
 
 Just drag and drop the folder, APSGroupedTableView into your project.
 
+### License
+Apache License
+Version 2.0, January 2004
 
 ### Author
 
