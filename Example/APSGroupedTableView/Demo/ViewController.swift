@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTableDelegte {
-
-    let category_bg = UIColor .init(colorLiteralRed: 22.0/255.0, green: 151.0/255.0, blue: 136.0/255.0, alpha: 1)
-    let content_bg = UIColor .init(colorLiteralRed: 224.0/255.0, green: 226.0/255.0, blue: 196.0/255.0, alpha: 1)
+    
+    let category_bg = UIColor .init(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1)
+    let content_bg = UIColor.white
 
     var tableData = [String:Array<String>]()
     
@@ -28,7 +28,9 @@ class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTable
         
         self.view.addSubview(table)
         self.navigationController?.navigationBar.barTintColor = category_bg
-        self.view.backgroundColor = content_bg
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.view.backgroundColor = UIColor.white
+        table.backgroundColor = UIColor.white
         self.title = "Demo"
     }
 
@@ -36,6 +38,7 @@ class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     func mockData() -> [String:Array<String>] {
         var dataset = [String:Array<String>]()
@@ -75,6 +78,14 @@ class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTable
         cell.cellCategoryName = keys[indexPath.row]
         cell.cellItems = tableData[keys[indexPath.row]]!
         cell.backgroundColor = content_bg
+        
+        cell.category_bg = category_bg
+        cell.separatorColor = UIColor.darkGray
+        cell.content_bg = content_bg
+        cell.categoryTitleColor = UIColor.white
+        cell.customtextColor = UIColor.lightGray
+        cell.shadowEnabled = true
+        
         cell.selectionStyle = .none
         return cell;
     }

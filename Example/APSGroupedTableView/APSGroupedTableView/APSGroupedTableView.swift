@@ -30,6 +30,7 @@ class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSourc
     weak var apsDelegate:APSGroupedTableDelegte?
     weak var apsOptionalDelegate:APSGroupedTableViewOptionalDatasources?
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -64,6 +65,7 @@ class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSourc
             return UITableViewCell(style: .default, reuseIdentifier: "DefaultCellIndentifier")
         }
         cell.tag = indexPath.section*100 + indexPath.row*10
+        
         return cell
     }
     
