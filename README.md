@@ -8,9 +8,8 @@ This was a design requirement I faced in one of my projects. I decided to work o
 
 <img src = "https://github.com/AishPratap/APSGroupedTableView/blob/master/Screenshots/ScreenShotShadow.png" width = 360>
 
-![ScreenShot](https://github.com/AishPratap/APSGroupedTableView/blob/master/Screenshots/ScreenShotShadow.png | width = 360)
+<img src = "https://github.com/AishPratap/APSGroupedTableView/blob/master/Screenshots/ScreenShot.png" width = 360>
 
-![ScreenShot](https://github.com/AishPratap/APSGroupedTableView/blob/master/Screenshots/ScreenShot.png)
 
 ### Manual Installation
 
