@@ -30,6 +30,7 @@ class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSourc
     weak var apsDelegate:APSGroupedTableDelegte?
     weak var apsOptionalDelegate:APSGroupedTableViewOptionalDatasources?
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,10 +61,13 @@ class APSGroupedTableView : UITableView,UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = apsDataSource?.apstableview(tableView: self, cellForRowAt: indexPath) else {
+        guard let cell:APSGroupedTableViewCell = apsDataSource?.apstableview(tableView: self, cellForRowAt: indexPath) as? APSGroupedTableViewCell else {
             return UITableViewCell(style: .default, reuseIdentifier: "DefaultCellIndentifier")
         }
         cell.tag = indexPath.section*100 + indexPath.row*10
+        
+        cell.delegate = self
+        
         return cell
     }
     

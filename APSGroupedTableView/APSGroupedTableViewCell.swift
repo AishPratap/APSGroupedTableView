@@ -14,20 +14,23 @@ protocol APSGroupedCellDelegate: class {
 
 class APSGroupedTableViewCell: UITableViewCell {
 
-    weak var delegate:APSGroupedCellDelegate?
+    public weak var delegate:APSGroupedCellDelegate?
     let categoryWidth:CGFloat = 100.0
     let cellPadding:CGFloat = 10.0
     let corenerRadius = 2.0
     let categoryHeight = 50
-    let category_bg = UIColor .init(colorLiteralRed: 22.0/255.0, green: 151.0/255.0, blue: 136.0/255.0, alpha: 1)
-    let separatorColor = UIColor .init(colorLiteralRed: 235.0/255.0, green: 216.0/255.0, blue: 186.0/255.0, alpha: 1)
-    let content_bg = UIColor .init(colorLiteralRed: 244.0/255.0, green: 226.0/255.0, blue: 196.0/255.0, alpha: 1)
-    let categoryTitleColor = UIColor .init(colorLiteralRed: 4.0/255.0, green: 52.0/255.0, blue: 90.0/255.0, alpha: 1)
-    
     
     var categoryImage:UIImage = UIImage()
     var cellItems:Array<String> = []
     var cellCategoryName:String = ""
+    
+    var category_bg:UIColor = UIColor.red
+    var separatorColor:UIColor = UIColor.black
+    var content_bg:UIColor = UIColor.white
+    var categoryTitleColor:UIColor = UIColor.white
+    var customtextColor = UIColor.lightGray
+    
+    var shadowEnabled:Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -68,12 +71,12 @@ class APSGroupedTableViewCell: UITableViewCell {
             let medButtonView = UIButton(frame:CGRect(x:categoryWidth, y:ySpace, width:self.frame.size.width - (categoryWidth + cellPadding), height:CGFloat(categoryHeight)))
             medButtonView.tag = cellIndex + i
             medButtonView.setTitle(cellItems[i], for: .normal)
-            medButtonView.setTitleColor(category_bg, for: .normal)
+            medButtonView.setTitleColor(customtextColor, for: .normal)
             medButtonView.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
             medButtonView.contentHorizontalAlignment = .left
             medButtonView.addTarget(self, action: #selector(self.cellTapped(sender:)), for: .touchUpInside)
             
-            let medSeparatorLabel = UILabel(frame:CGRect(x:categoryWidth, y:ySpace + CGFloat(categoryHeight), width:self.frame.size.width - (categoryWidth + cellPadding), height:1))
+            let medSeparatorLabel = UILabel(frame:CGRect(x:categoryWidth, y:ySpace + CGFloat(categoryHeight), width:self.frame.size.width - (categoryWidth + 2*cellPadding), height:1))
             medSeparatorLabel.backgroundColor = separatorColor
             
             customCellView.clipsToBounds = true
@@ -83,6 +86,17 @@ class APSGroupedTableViewCell: UITableViewCell {
         
         customCellView.backgroundColor = content_bg
         customCellView.layer.cornerRadius = CGFloat(corenerRadius)
+        customCellView.layer.borderColor = separatorColor.cgColor
+        customCellView.layer.borderWidth = 0.5
+        
+        if shadowEnabled {
+            customCellView.layer.shadowColor = UIColor.lightGray.cgColor
+            customCellView.layer.shadowRadius = 1
+            customCellView.layer.shadowOpacity = 0.5
+            customCellView.layer.masksToBounds = false
+            customCellView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        }
+        
         customCellView.tag = 101
         return customCellView
     }
