@@ -12,7 +12,7 @@ class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTable
     
     let category_bg = UIColor .init(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1)
     let content_bg = UIColor.white
-
+    
     var tableData = [String:Array<String>]()
     
     override func viewDidLoad() {
@@ -31,7 +31,12 @@ class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTable
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.view.backgroundColor = UIColor.white
         table.backgroundColor = UIColor.white
+
         self.title = "Demo"
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,7 +97,7 @@ class ViewController: UIViewController,APSGroupedTableDataSource,APSGroupedTable
     
     //MARK: - APSTableView Delegate
     func apsTableView(tableView:APSGroupedTableView, didTap index:[Int]){
-        
+        print(index);
     }
 }
 

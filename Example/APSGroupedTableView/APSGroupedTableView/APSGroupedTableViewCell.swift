@@ -14,7 +14,7 @@ protocol APSGroupedCellDelegate: class {
 
 class APSGroupedTableViewCell: UITableViewCell {
 
-    weak var delegate:APSGroupedCellDelegate?
+    public weak var delegate:APSGroupedCellDelegate?
     let categoryWidth:CGFloat = 100.0
     let cellPadding:CGFloat = 10.0
     let corenerRadius = 2.0
